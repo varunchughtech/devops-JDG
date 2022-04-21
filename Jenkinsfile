@@ -11,7 +11,7 @@ pipeline {
 
                                               sh 'docker login -u neekohslihka -p dockerhubcreds'
                                               sh 'docker push neekohslihka/akhil-testone:nine'
-                                          //}
+                                          }
                                   }
         }
     }
