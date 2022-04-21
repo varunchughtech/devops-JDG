@@ -6,11 +6,11 @@ pipeline {
              steps {
                                   script{
                                          //sh 'cp -r ../shared-library@2/target .'
-                                         sh 'docker build . -t neekohslihka/akhil-testone:varun'
+                                         sh 'docker build . -t neekohslihka/akhil-testone:varun2'
                                            withCredentials([string(credentialsId: 'neekohslihka', variable: 'dockerhubcreds')]) {
 
                                               sh 'docker login -u neekohslihka -p dockerhubcreds'
-                                              sh 'docker push neekohslihka/akhil-testone:varun'
+                                              sh 'docker push neekohslihka/akhil-testone:varun2'
                                           }
                                   }
         }
