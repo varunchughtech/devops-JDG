@@ -50,7 +50,7 @@ pipeline {
 				withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubcreds')]) {
 
                                               //sh 'docker login -u neekohslihka -p $dockerhubcreds'
-					      //sh "ssh akhil@${DEV_IP} docker run -d -p 8080:8080 --name=dockercontainer neekohslihka/akhil-testone:${DOCKER_TAG}"	
+					      sh "ssh akhil@${DEV_IP} docker run -d -p 8080:8080 --name=dockercontainer neekohslihka/akhil-testone:${DOCKER_TAG}"	
 				}
 				//withCredentials([string(credentialsId: 'nexus-docker', variable: 'nexusPwd')]) {
 					//sh returnStatus: true, script: "ssh ec2-user@${DEV_IP} docker login -u admin -p ${nexusPwd} ${NEXUS_HOST}"
