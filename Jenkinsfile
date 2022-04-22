@@ -18,7 +18,7 @@ pipeline {
                                            withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubcreds')]) {
 
                                               sh 'docker login -u neekohslihka -p $dockerhubcreds'
-                                              sh 'docker push neekohslihka/akhil-testone:alpha2'
+                                              sh 'docker push neekohslihka/akhil-testone:${DOCKER_TAG}'
                                           }
                                   }
         }
