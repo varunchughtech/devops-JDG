@@ -9,7 +9,7 @@ pipeline {
     stages {
 	stage("Git Checkout"){
             steps{
-                git credentialsId: 'githubcreds', url: 'https://github.com/lihkas/devops-JDG.git'
+                git credentialsId: 'githubcreds', url: 'https://github.com/lihkas/devops-JDG'
             }
         }    
         stage('DOCKER-BUILD') {
