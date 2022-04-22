@@ -10,7 +10,7 @@ pipeline {
 	
 	stage("Git Checkout"){
             steps{
-                git branch: 'main', credentialsId: 'githubcreds', url: 'https://github.com/lihkas/devops-JDG.git'
+                git branch: 'master', credentialsId: 'githubcreds', url: 'https://github.com/lihkas/devops-JDG.git'
             }
         } 
 	
