@@ -48,7 +48,7 @@ pipeline {
 				script {
 				sh returnStatus: true, script: 'ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} docker rm -f dockercontainer'
 				//sh 'ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} whoami'
-				sh returnStatus: true, script: "scp -r /home/ec2-user/akhil.txt akhil@${DEV_IP}"
+				sh returnStatus: true, script: "scp -r /var/lib/jenkins/workspace/job-JDG akhil@${DEV_IP}"
 				sh returnStatus: true, script: "ssh akhil@${DEV_IP} pwd"
 				//withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubcreds')]) {
 
