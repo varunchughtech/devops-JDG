@@ -27,8 +27,8 @@ pipeline {
 }
 //to get docker image tag as per git commit id
 def getLatestCommitId(){
-	//def commitId = sh returnStdout: true, script: 'git rev-parse HEAD'
-	def commitId = sh script: 'git rev-parse HEAD'
+	def commitId = sh returnStdout: true, script: 'git rev-parse HEAD'
+	//def commitId = sh script: 'git rev-parse HEAD'
 	return commitId
 }
 //to add maven home path
