@@ -30,6 +30,7 @@ def getLatestCommitId(){
 	def commitId = sh returnStdout: true, script: 'git rev-parse HEAD'
 	return commitId
 }
+//to add maven home path
 def getMavenPath(){
 	def mvnHome = tool name: 'maven-3', type: 'maven'
 	return "${mvnHome}/bin"
