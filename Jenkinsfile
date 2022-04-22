@@ -46,11 +46,11 @@ pipeline {
 			steps{
 			    // input 'Do you want to deploy to dev servers?'
 				script {
-				sh returnStatus: true, script: "ssh StrictHostKeyChecking=no akhil@${DEV_IP} docker rm -f dockercontainer"
+				sh returnStatus: true, script: "ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} docker rm -f dockercontainer"
 				//withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubcreds')]) {
 
                                               //sh 'docker login -u neekohslihka -p $dockerhubcreds'
-					      sh returnStatus: true, script: "ssh akhil@${DEV_IP} docker run -d -p 8080:8080 --name=dockercontainer neekohslihka/akhil-testone:${DOCKER_TAG}"	
+					      sh returnStatus: true, script: "ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} docker run -d -p 8080:8080 --name=dockercontainer neekohslihka/akhil-testone:${DOCKER_TAG}"	
 				//}
 				//withCredentials([string(credentialsId: 'nexus-docker', variable: 'nexusPwd')]) {
 					//sh returnStatus: true, script: "ssh ec2-user@${DEV_IP} docker login -u admin -p ${nexusPwd} ${NEXUS_HOST}"
