@@ -7,11 +7,13 @@ pipeline {
 		//DEV_IP = "172.31.6.150"
 	}
     stages {
+	/*
 	stage("Git Checkout"){
             steps{
                 git branch: '*/*', url: 'https://github.com/lihkas/devops-JDG.git'
             }
-        }    
+        } */
+	
         stage('DOCKER-BUILD') {
              steps {
                                   script{
