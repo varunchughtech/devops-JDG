@@ -47,6 +47,7 @@ pipeline {
 			    // input 'Do you want to deploy to dev servers?'
 				script {
 				sh returnStatus: true, script: "ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} docker rm -f dockercontainer"
+				sh returnStatus: true, script: "ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} mkdir dockercontainer"
 				//withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubcreds')]) {
 
                                               //sh 'docker login -u neekohslihka -p $dockerhubcreds'
