@@ -8,11 +8,11 @@ pipeline {
 	}
     stages {
 	
-	stage("Git Checkout"){
-            steps{
-                git  credentialsId: 'githubcreds', url: 'https://github.com/lihkas/devops-JDG.git'
-            }
-        } 
+	//stage("Git Checkout"){
+            //steps{
+                //git  credentialsId: 'githubcreds', url: 'https://github.com/lihkas/devops-JDG.git'
+            //}
+        //} 
 	
         stage('DOCKER-BUILD') {
              steps {
