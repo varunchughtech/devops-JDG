@@ -64,7 +64,7 @@ def getLatestCommitId(){
 	return commitId
 }
 //to add maven home path
-def getMavenPath(){
-	def mvnHome = tool name: 'maven-3', type: 'maven'
-	return "${mvnHome}/bin"
-}
+//def getMavenPath(){
+//	def mvnHome = tool name: 'maven-3', type: 'maven'
+//	return "${mvnHome}/bin"
+//}
