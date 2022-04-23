@@ -46,7 +46,7 @@ pipeline {
 			steps{
 			    // input 'Do you want to deploy to dev servers?'
 				script {
-					sshagent(['vm-demo-one']){
+					sshagent(['akhil-sshid']){
 				sh returnStatus: true, script: 'ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} docker rm -f dockercontainer'
 				//sh 'ssh -o StrictHostKeyChecking=no akhil@${DEV_IP} whoami'
 				sh returnStatus: true, script: "scp -r -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/job-JDG akhil@${DEV_IP}:/home/akhil"
