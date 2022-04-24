@@ -1,6 +1,11 @@
 pipeline {
     agent any
-
+environment {
+		//PATH = "${PATH}:${getMavenPath()}"
+		DOCKER_TAG = "${getLatestCommitId()}"
+		//NEXUS_HOST = "172.31.45.145:8083"
+//	DEV_IP = "3.108.54.171"
+	}
     stages {
         stage('DOCKER') {
              steps {
@@ -16,4 +21,10 @@ pipeline {
         }
     }
 }
+}
+//to get docker image tag as per git commit id
+def getLatestCommitId(){
+	def commitId = sh returnStdout: true, script: 'git rev-parse HEAD'
+	//def commitId = sh script: 'git rev-parse HEAD'
+	return commitId
 }
